@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+</head>
+
+<style>
+  * {
+
+    font-family: arial;
+  }
+
+  .article {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    min-height: 200vh;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: white;
+    border: 2px solid blue;
+    color: blue;
+    cursor: pointer;
+  }
+
+  .article.blur {
+    filter: blur(2px);
+  }
+
+  img {
+    padding: 50px 0;
+    width: 100%;
+  }
+
+  .modal-wrap.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, .5);
+
+  }
+
+  .modal-wrap.active .modal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 80%;
+    background-color: #fff;
+    border: 2px solid black;
+  }
+
+  .modal-wrap.active .modal .top {
+    flex-basis: 15%;
+    background: hsl(224, 76%, 59%);
+  }
+
+  .modal-wrap.active .modal .middle {
+    flex-grow: 1;
+    background: #ccc;
+  }
+
+  .modal-wrap.active .modal .bottom {
+    flex-basis: 15%;
+    background: hsl(224, 76%, 59%);
+  }
+
+  .modal-wrap.active .modal i.far {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    font-size: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  @media(max-width: 800px) {
+    .modal-wrap.active .modal {
+      height: 90%;
+      width: 90%;
+    }
+  }
+</style>
+
+<body>
+  <section class="article">
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, corporis sequi aspernatur alias fugit, ad magni
+      natus officiis dolorem assumenda placeat quam sit voluptatem dolore earum eum delectus vero repudiandae.
+    </p>
+    <button>Kup teraz</button>
+    <img src="kodjaq640.jpg" alt="skoda kodjaq">
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, molestiae. Aliquam labore quia dolorum sit
+      ex! Impedit illo saepe, ab, dolorum numquam esse laborum distinctio delectus iure mollitia non dicta!
+    </p>
+  </section>
+
+  <section class="modal-wrap">
+    <div class="modal">
+      <div class="top"></div>
+      <div class="middle"></div>
+      <div class="bottom"></div>
+      <span><i class="far fa-times-circle"></i></span>
+    </div>
+  </section>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script>
+    //MOJE JQ
+    // $('.article button').on('click', function () {
+    //   $(".modal-wrap").addClass('active');
+    //   $('.article').addClass("blur");
+    // })
+
+    // $('span i.far.fa-times-circle').on('click', function () {
+    //   $(".modal-wrap").removeClass('active');
+    //   $('.article').removeClass("blur");
+    // })
+
+
+    //JQ skrócone moje
+    $('.article button, span i.far').on('click', function () {
+      $(".modal-wrap").toggleClass('active');
+      $('.article').toggleClass("blur");
+    })
+
+
+
+    //MOJE JS
+    // const btnModal = document.querySelector("button");
+    // const divModal = document.querySelector(".modal-wrap");
+    // const secArt = document.querySelector('.article');
+    // const spanI = document.querySelector('i.far');
+
+    // btnModal.addEventListener('click', function () {
+    //   divModal.classList.add('active');
+    //   secArt.classList.add('blur');
+    // })
+
+    // spanI.addEventListener('click', function () {
+    //   divModal.classList.remove('active');
+    //   secArt.classList.remove('blur');
+    // })
+  </script>
+</body>
+
+</html>
